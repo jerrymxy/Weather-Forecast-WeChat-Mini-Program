@@ -1,0 +1,90 @@
+<!--index.wxml-->
+<view class="container" style="background: linear-gradient(to bottom, SkyBlue, #faf9fa);">
+  <view class="city_item city_item_center" bindtap="showSearchCity">
+    {{location.name}}, {{location.adm2}}
+    <image class="switch" src="cloud://mywxcloud-7gaqfr3a6f612f04.6d79-mywxcloud-7gaqfr3a6f612f04-1312287750/weathericon/switch.svg"></image>
+  </view>
+  
+  <view class="realtime">
+    <view class="weathernow">
+      <image class="pic" src="{{iconurl}}/{{now.icon}}.svg"></image>
+      <view class="desc">
+        <text>{{now.text}}</text>
+        <text>{{now.windDir}} {{now.windScale}}级</text>
+      </view>
+    </view>
+    <view class="temperature">
+      <text>{{now.temp}}℃</text>
+    </view>
+    <view class="more">
+      <text>体感 {{now.feelsLike}}℃</text>
+    </view>
+  </view>
+
+  <view class='lastUpdateDate'>更新时间：{{now.obsTime}}</view>
+</view>
+
+<view class="container">
+  <view class="weather">
+    <text class="title">3日预报</text>
+    <view class="day" wx:for="{{daily}}" wx:for-item="d" wx:key="dailyIdx">
+      <view class="date">{{d.fxDate}}</view>
+      <!-- <view class="date">周{{item.week}}</view> -->
+      <image class="pic" src="{{iconurl}}/{{d.iconDay}}.svg"></image>
+      <view class="desc">
+        <text>{{d.textDay}}</text>
+        <text>{{d.windDirDay}} {{d.windScaleDay}}级</text>
+      </view>
+      <view class="temperature">
+        <text>{{d.tempMin}}~{{d.tempMax}}℃</text>
+        <view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+<view class="container">
+  <view class="weather">
+    <text class="title">今日详情</text>
+    <view class="wea-info-list">
+      <view class="li">
+        <view class="ti">日出时间</view>
+        <view class="tn">{{daily[0].sunrise}}</view>
+      </view>
+      <view class="li">
+        <view class="ti">日落时间</view>
+        <view class="tn">{{daily[0].sunset}}</view>
+      </view>
+      <view class="li">
+        <view class="ti">空气质量</view>
+        <view class="tn">{{air.category}}</view>
+      </view>
+      <view class="li">
+        <view class="ti">PM2.5</view>
+        <view class="tn">{{air.pm2p5}}</view>
+      </view>
+      <view class="li">
+        <view class="ti">{{now.windDir}}{{now.windScale}}级</view>
+        <view class="tn">{{now.windSpeed}} km/h</view>
+      </view>
+      <view class="li">
+        <view class="ti">能见度</view>
+        <view class="tn">{{now.vis}} km</view>
+      </view>
+      <view class="li">
+        <view class="ti">湿度</view>
+        <view class="tn">{{now.humidity}}%</view>
+      </view>
+      <view class="li">
+        <view class="ti">气压</view>
+        <view class="tn">{{now.pressure}} hPa</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="container">
+  <view class="lastUpdateDate">数据来源：和风天气</view>
+</view>

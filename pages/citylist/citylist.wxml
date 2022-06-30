@@ -1,0 +1,43 @@
+<!--citylist.wxml-->
+<view>
+  <scroll-view class="container" scroll-y="true" scroll-with-animation="true" style="padding: 10rpx 10rpx;">
+    <view class="city-selected">
+      <view class="item" bindtap="selectCurPos">
+        <view class="name">{{currentName}}</view>
+
+        <image class="pic" src="{{iconurl}}/{{currentData.icon}}.svg"></image>
+        <view class="desc">
+          <text>{{currentData.text}}</text>
+
+        </view>
+        <view class="temperature">
+          <text>{{currentData.temp}}°</text>
+        </view>
+        <view class="remove">
+          <image class="geopic" src="cloud://mywxcloud-7gaqfr3a6f612f04.6d79-mywxcloud-7gaqfr3a6f612f04-1312287750/weathericon/geo-alt.svg"></image>
+        </view>
+      </view>
+
+      <block wx:for="{{citySelected}}" wx:key="dayIdx" wx:for-item="location" wx:for-index="index">
+        <view class="item">
+          <view class="name" bindtap="selectCity" data-city_code="{{location}}">{{id_to_city[index]}}</view>
+          <image class="pic" bindtap="selectCity" data-city_code="{{location}}" src="{{iconurl}}/{{now[location].icon}}.svg"></image>
+          <view class="desc" bindtap="selectCity" data-city_code="{{location}}">
+            <text>{{now[location].text}}</text>
+          </view>
+          <view class="temperature" bindtap="selectCity" data-city_code="{{location}}">
+            <text>{{now[location].temp}}°</text>
+          </view>
+          <view class="remove">
+            <icon type="cancel" size="15" bindtap="removeCity" data-city_code="{{ location }}" />
+          </view>
+        </view>
+      </block>
+
+      <view class="item add" bindtap="showSearchCity">
+        <text>+ 添加地区</text>
+      </view>
+
+    </view>
+  </scroll-view>
+</view>
