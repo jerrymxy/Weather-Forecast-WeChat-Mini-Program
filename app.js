@@ -20,7 +20,7 @@ App({
     userInfo: null,
     hfkey: '', // 和风天气key
     iconurl: "", // 图标地址
-    locationID: null, // 和风天气地理位置API的LocationID
+    geoLocationID: null, // 和风天气城市API的当前位置
     name: null, // 城市名
     adm1: null,
     adm2: null

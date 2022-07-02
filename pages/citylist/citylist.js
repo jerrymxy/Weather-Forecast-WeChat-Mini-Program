@@ -11,22 +11,16 @@ Page({
     iconurl: globalData.iconurl,
     citySelected: {},
     locationID: "",
-    new_city_name: ""
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    let now = wx.getStorageSync("now");
+  onLoad: function () {
     this.setData({
-      // userInfo: app.globalData.userInfo,
-      // weatherData: wx.getStorageSync('weatherData'),
+      locationID: globalData.geoLocationID,
       currentName: globalData.name,
-      // currentAdm1: globalData.adm1,
-      currentData: now[globalData.locationID],
-      // citySelected: wx.getStorageSync('citySelected'),
+      currentData: wx.getStorageSync('now')
     })
-
   },
 
   onShow: function () {
@@ -76,8 +70,6 @@ Page({
   // 选择地区
   selectCity: function (e) {
     let locationID = e.currentTarget.dataset.city_code;
-    // console.log(locationID);
-    // globalData.locationID = locationID;
     let pages = getCurrentPages();
     let indexpage = pages[pages.length - 2];
     indexpage.setLocation(locationID);

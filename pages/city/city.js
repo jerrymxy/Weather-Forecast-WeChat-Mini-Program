@@ -87,22 +87,6 @@ Page({
 
       }
     })
-    // Object.assign(params, obj);
-    // utils.requestAjax.get('https://geoapi.qweather.com/v2/city/lookup', params)
-    //   .then((res) => {
-    //     wx.hideLoading();
-    //     if (res.data.code != 200) {
-    //       that.setData({
-    //         cityList: [],
-    //         isShow: true,
-    //       })
-    //       return
-    //     }
-    //   that.setData({
-    //     cityList: res.data.location,
-    //     isShow: true,
-    //   })
-    // })
   },
 
   //键盘输入监听

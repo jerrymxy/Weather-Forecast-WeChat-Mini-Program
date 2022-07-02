@@ -5,13 +5,13 @@
       <view class="item" bindtap="selectCurPos">
         <view class="name">{{currentName}}</view>
 
-        <image class="pic" src="{{iconurl}}/{{currentData.icon}}.svg"></image>
+        <image class="pic" src="{{iconurl}}/{{now[locationID].icon}}.svg"></image>
         <view class="desc">
-          <text>{{currentData.text}}</text>
+          <text>{{now[locationID].text}}</text>
 
         </view>
         <view class="temperature">
-          <text>{{currentData.temp}}°</text>
+          <text>{{now[locationID].temp}}°</text>
         </view>
         <view class="remove">
           <image class="geopic" src="cloud://mywxcloud-7gaqfr3a6f612f04.6d79-mywxcloud-7gaqfr3a6f612f04-1312287750/weathericon/geo-alt.svg"></image>

@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container" style="background: linear-gradient(to bottom, SkyBlue, #faf9fa);">
-  <view class="city_item city_item_center" bindtap="showSearchCity">
+  <view class="city_item city_item_center" bindtap="showCityList">
     {{location.name}}, {{location.adm2}}
     <image class="switch" src="cloud://mywxcloud-7gaqfr3a6f612f04.6d79-mywxcloud-7gaqfr3a6f612f04-1312287750/weathericon/switch.svg"></image>
   </view>
