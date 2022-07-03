@@ -1,12 +1,18 @@
 # Weather-Forecast-WeChat-Mini-Program
 
-简单的天气预报小程序
+简单的天气预报微信小程序
+
+## 截图
+
+![首页](Demo/screenshot-index.jpg)
 
 ## 项目说明
 
-使用了和风天气API，编译运行前需要自行申请和风天气的key。
+天气数据来源于和风天气API，编译运行前需要自行申请和风天气的key。
 
 和风天气开发平台：https://dev.qweather.com/
+
+天气图标为开源的和风天气图标，详见：https://icons.qweather.com/
 
 app.js中使用了微信云开发的云存储，用于存储天气图标，需要自行创建云环境并替换图片地址。
 
